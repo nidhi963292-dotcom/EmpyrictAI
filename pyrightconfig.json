@@ -1,0 +1,12 @@
+{
+  "include": [
+    "ml"
+  ],
+  "extraPaths": [
+    "./ml",
+    "./ml/src"
+  ],
+  "reportMissingImports": "warning",
+  "reportOptionalMemberAccess": "warning",
+  "pythonVersion": "3.10"
+}

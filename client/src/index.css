@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #fdfbf7;
+  color: #0f172a;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body,
+html.dark body {
+  background-color: #071012;
+  color: #fdfbf7;
+}
+
+/* Custom Palette 02/03 Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(141, 184, 190, 0.6);
+  border-radius: 9999px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(72, 169, 166, 0.9);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(24, 86, 93, 0.6);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(42, 134, 147, 0.9);
+}
+
+/* 3D Glassmorphism & Depth System */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(194, 223, 227, 0.5);
+  box-shadow: 0 4px 6px -1px rgba(11, 26, 28, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.dark .glass-card {
+  background: rgba(13, 28, 30, 0.8);
+  border-color: rgba(24, 86, 93, 0.4);
+  box-shadow: 0 4px 6px -1px rgba(7, 16, 18, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.glass-card-hover:hover {
+  box-shadow: 0 20px 40px -10px rgba(11, 26, 28, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
+  border-color: rgba(72, 169, 166, 0.6);
+}
+
+.dark .glass-card-hover:hover {
+  box-shadow: 0 20px 40px -10px rgba(7, 16, 18, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-color: rgba(42, 134, 147, 0.7);
+}
+
+/* 3D Interactive Card Container */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-3d-inner {
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.25s ease;
+}
+
+.card-3d:hover .card-3d-inner {
+  transform: translateY(-6px) rotateX(2deg) rotateY(-2deg);
+}
+
+/* Animated Mesh Gradient Backgrounds */
+.mesh-bg-dark {
+  background: radial-gradient(circle at 15% 15%, rgba(72, 169, 166, 0.15), transparent 40%),
+              radial-gradient(circle at 85% 85%, rgba(208, 148, 107, 0.12), transparent 45%),
+              radial-gradient(circle at 50% 50%, rgba(29, 110, 119, 0.1), transparent 60%),
+              #071012;
+}
+
+.mesh-bg-light {
+  background: radial-gradient(circle at 10% 20%, rgba(194, 223, 227, 0.4), transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(247, 201, 170, 0.35), transparent 45%),
+              radial-gradient(circle at 50% 50%, rgba(248, 239, 224, 0.6), transparent 60%),
+              #fdfbf7;
+}
+
+/* 3D Floating Elements */
+.floating-orb-1 {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(48px);
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(72, 169, 166, 0.3) 0%, rgba(42, 134, 147, 0.05) 70%);
+}
+
+.floating-orb-2 {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(48px);
+  pointer-events: none;
+  animation: float-reverse 7s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(247, 201, 170, 0.28) 0%, rgba(208, 148, 107, 0.05) 70%);
+}
+
+/* 3D Specular Shimmer Gradient */
+.shimmer-text {
+  background: linear-gradient(90deg, #1d6e77 0%, #48a9a6 30%, #d0946b 70%, #1d6e77 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 5s linear infinite;
+}
+
+.dark .shimmer-text {
+  background: linear-gradient(90deg, #c2dfe3 0%, #48a9a6 35%, #f7c9aa 70%, #c2dfe3 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 5s linear infinite;
+}

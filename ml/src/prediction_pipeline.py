@@ -141,7 +141,7 @@ def preprocess_input(df):
     df = df[feature_columns]
 
     # Scaling
-    if requires_scaling:
+    if requires_scaling and scaler is not None:
         df = scaler.transform(df)
 
     return df
@@ -190,7 +190,7 @@ def generate_recommendation(probability):
 # SINGLE EMPLOYEE PREDICTION
 # ============================================================
 
-def predict_single_employee(df):
+def predict_single_employee(df, explain=True):
 
     """
     Predict attrition for a single employee.
@@ -199,11 +199,13 @@ def predict_single_employee(df):
     ----------
     df : pandas.DataFrame
         DataFrame containing exactly one employee.
+    explain : bool, default=True
+        Whether to calculate top risk and protective factors.
 
     Returns
     -------
     dict
-        Prediction result.
+        Prediction result and feature attributions.
     """
 
     processed_data = preprocess_input(df)
@@ -223,6 +225,23 @@ def predict_single_employee(df):
             probability_leaving
         )
     }
+
+    if explain:
+        try:
+            from explainability import explain_single_employee
+            explanation = explain_single_employee(processed_data, raw_employee_df=df)
+            result["Explanation"] = explanation
+            result["Top_Risk_Drivers"] = [
+                f"{item['feature']} (+{item['contribution']})"
+                for item in explanation["top_risk_factors"]
+            ]
+            result["Top_Protective_Factors"] = [
+                f"{item['feature']} ({item['contribution']})"
+                for item in explanation["top_protective_factors"]
+            ]
+        except Exception as e:
+            result["Explanation"] = None
+            result["Explanation_Error"] = str(e)
 
     return result
 

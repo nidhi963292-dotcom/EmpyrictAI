@@ -1,7 +1,25 @@
+import os
+import sys
 import pandas as pd
 
-from prediction_pipeline import predict_single_employee
-from ai_hr_assistant import generate_hr_analysis
+if sys.platform.startswith("win"):
+    try:
+        if hasattr(sys.stdout, "reconfigure"):
+            getattr(sys.stdout, "reconfigure")(encoding="utf-8")
+    except Exception:
+        pass
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.insert(0, current_dir)
+
+try:
+    from prediction_pipeline import predict_single_employee
+    from ai_hr_assistant import generate_hr_analysis
+except ImportError:
+    from src.prediction_pipeline import predict_single_employee  # type: ignore[import-not-found]
+    from src.ai_hr_assistant import generate_hr_analysis  # type: ignore[import-not-found]
+
 
 
 # ============================================================

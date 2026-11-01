@@ -98,11 +98,11 @@ def preprocess_data(verbose=True):
 
     # Encode target variable
     label_encoder = LabelEncoder()
-    y = label_encoder.fit_transform(y)
+    y_encoded = label_encoder.fit_transform(y)
 
-    if verbose:
+    if verbose and y_encoded is not None:
         print("\nEncoded Target Values:")
-        print(y[:10])
+        print(list(y_encoded[:10]))
 
     # One-Hot Encode categorical columns
     X = pd.get_dummies(X, drop_first=True)
@@ -125,15 +125,18 @@ def preprocess_data(verbose=True):
     # Split dataset into training and testing
     X_train, X_test, y_train, y_test = train_test_split(
         X,
-        y,
+        y_encoded,
         test_size=0.2,
         random_state=42,
-        stratify=y
+        stratify=y_encoded
     )
 
+    X_train_df = pd.DataFrame(X_train, columns=X.columns)
+    X_test_df = pd.DataFrame(X_test, columns=X.columns)
+
     if verbose:
-        print("\nTraining Set:", X_train.shape)
-        print("Testing Set:", X_test.shape)
+        print("\nTraining Set:", X_train_df.shape)
+        print("Testing Set:", X_test_df.shape)
 
     # Scale the data
     scaler = StandardScaler()
@@ -152,8 +155,8 @@ def preprocess_data(verbose=True):
         print("\nScaler saved successfully!")
 
     return (
-        X_train,
-        X_test,
+        X_train_df,
+        X_test_df,
         X_train_scaled,
         X_test_scaled,
         y_train,

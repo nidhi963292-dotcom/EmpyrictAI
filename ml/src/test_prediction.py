@@ -1,9 +1,30 @@
-from data_preprocessing import preprocess_data
-from prediction_pipeline import (
-    predict_single_employee,
-    predict_bulk_employees
-)
+import os
+import sys
+import pandas as pd
 
+if sys.platform.startswith("win"):
+    try:
+        if hasattr(sys.stdout, "reconfigure"):
+            getattr(sys.stdout, "reconfigure")(encoding="utf-8")
+    except Exception:
+        pass
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.insert(0, current_dir)
+
+try:
+    from data_preprocessing import preprocess_data
+    from prediction_pipeline import (
+        predict_single_employee,
+        predict_bulk_employees
+    )
+except ImportError:
+    from src.data_preprocessing import preprocess_data  # type: ignore[import-not-found]
+    from src.prediction_pipeline import (  # type: ignore[import-not-found]
+        predict_single_employee,
+        predict_bulk_employees
+    )
 
 # ============================================================
 # LOAD PREPROCESSED DATA

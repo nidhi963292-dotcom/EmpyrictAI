@@ -1,0 +1,266 @@
+{
+    "model_name": "Logistic Regression",
+    "metric": "Model Coefficient (Log-Odds Impact)",
+    "top_attrition_drivers": [
+        {
+            "Feature": "OverTime_Yes",
+            "Importance": 0.8645669840005098
+        },
+        {
+            "Feature": "BusinessTravel_Travel_Frequently",
+            "Importance": 0.7512468010220474
+        },
+        {
+            "Feature": "JobRole_Laboratory Technician",
+            "Importance": 0.7147561145837182
+        },
+        {
+            "Feature": "YearsSinceLastPromotion",
+            "Importance": 0.5287040609182576
+        },
+        {
+            "Feature": "NumCompaniesWorked",
+            "Importance": 0.48760907269503617
+        },
+        {
+            "Feature": "JobRole_Sales Representative",
+            "Importance": 0.48145924746794805
+        },
+        {
+            "Feature": "BusinessTravel_Travel_Rarely",
+            "Importance": 0.4500696181586991
+        },
+        {
+            "Feature": "JobRole_Sales Executive",
+            "Importance": 0.4093610053147345
+        },
+        {
+            "Feature": "DistanceFromHome",
+            "Importance": 0.39359383149046173
+        },
+        {
+            "Feature": "MaritalStatus_Single",
+            "Importance": 0.3768768914556098
+        }
+    ],
+    "top_retention_drivers": [
+        {
+            "Feature": "TotalWorkingYears",
+            "Importance": -0.5556025948360322
+        },
+        {
+            "Feature": "EnvironmentSatisfaction",
+            "Importance": -0.4816590004151919
+        },
+        {
+            "Feature": "JobSatisfaction",
+            "Importance": -0.4194166907460935
+        },
+        {
+            "Feature": "EducationField_Medical",
+            "Importance": -0.414528566271587
+        },
+        {
+            "Feature": "Age",
+            "Importance": -0.40759692305864126
+        },
+        {
+            "Feature": "YearsWithCurrManager",
+            "Importance": -0.39836844646645225
+        },
+        {
+            "Feature": "JobInvolvement",
+            "Importance": -0.36533987241417415
+        },
+        {
+            "Feature": "JobRole_Research Director",
+            "Importance": -0.36134141913808526
+        },
+        {
+            "Feature": "EducationField_Life Sciences",
+            "Importance": -0.35618057695643923
+        },
+        {
+            "Feature": "YearsInCurrentRole",
+            "Importance": -0.3560156432758806
+        }
+    ],
+    "all_features_ranked": [
+        {
+            "Feature": "OverTime_Yes",
+            "Importance": 0.8645669840005098
+        },
+        {
+            "Feature": "BusinessTravel_Travel_Frequently",
+            "Importance": 0.7512468010220474
+        },
+        {
+            "Feature": "JobRole_Laboratory Technician",
+            "Importance": 0.7147561145837182
+        },
+        {
+            "Feature": "TotalWorkingYears",
+            "Importance": -0.5556025948360322
+        },
+        {
+            "Feature": "YearsSinceLastPromotion",
+            "Importance": 0.5287040609182576
+        },
+        {
+            "Feature": "NumCompaniesWorked",
+            "Importance": 0.48760907269503617
+        },
+        {
+            "Feature": "EnvironmentSatisfaction",
+            "Importance": -0.4816590004151919
+        },
+        {
+            "Feature": "JobRole_Sales Representative",
+            "Importance": 0.48145924746794805
+        },
+        {
+            "Feature": "BusinessTravel_Travel_Rarely",
+            "Importance": 0.4500696181586991
+        },
+        {
+            "Feature": "JobSatisfaction",
+            "Importance": -0.4194166907460935
+        },
+        {
+            "Feature": "EducationField_Medical",
+            "Importance": -0.414528566271587
+        },
+        {
+            "Feature": "JobRole_Sales Executive",
+            "Importance": 0.4093610053147345
+        },
+        {
+            "Feature": "Age",
+            "Importance": -0.40759692305864126
+        },
+        {
+            "Feature": "YearsWithCurrManager",
+            "Importance": -0.39836844646645225
+        },
+        {
+            "Feature": "DistanceFromHome",
+            "Importance": 0.39359383149046173
+        },
+        {
+            "Feature": "MaritalStatus_Single",
+            "Importance": 0.3768768914556098
+        },
+        {
+            "Feature": "JobInvolvement",
+            "Importance": -0.36533987241417415
+        },
+        {
+            "Feature": "JobRole_Research Director",
+            "Importance": -0.36134141913808526
+        },
+        {
+            "Feature": "EducationField_Life Sciences",
+            "Importance": -0.35618057695643923
+        },
+        {
+            "Feature": "YearsInCurrentRole",
+            "Importance": -0.3560156432758806
+        },
+        {
+            "Feature": "EducationField_Other",
+            "Importance": -0.3459499628263347
+        },
+        {
+            "Feature": "WorkLifeBalance",
+            "Importance": -0.3072716558144877
+        },
+        {
+            "Feature": "StockOptionLevel",
+            "Importance": -0.2993903001740115
+        },
+        {
+            "Feature": "JobRole_Human Resources",
+            "Importance": 0.29132608201246835
+        },
+        {
+            "Feature": "RelationshipSatisfaction",
+            "Importance": -0.2882391812803137
+        },
+        {
+            "Feature": "JobLevel",
+            "Importance": 0.28601486143029353
+        },
+        {
+            "Feature": "JobRole_Research Scientist",
+            "Importance": 0.216811402818687
+        },
+        {
+            "Feature": "TrainingTimesLastYear",
+            "Importance": -0.18836506713538978
+        },
+        {
+            "Feature": "DailyRate",
+            "Importance": -0.18653416414522161
+        },
+        {
+            "Feature": "EducationField_Marketing",
+            "Importance": -0.1661322380703411
+        },
+        {
+            "Feature": "YearsAtCompany",
+            "Importance": 0.1660228541146662
+        },
+        {
+            "Feature": "Department_Sales",
+            "Importance": 0.15730020249361024
+        },
+        {
+            "Feature": "Gender_Male",
+            "Importance": 0.15156720032609255
+        },
+        {
+            "Feature": "PercentSalaryHike",
+            "Importance": -0.11991215007819671
+        },
+        {
+            "Feature": "JobRole_Manager",
+            "Importance": 0.08633118713756542
+        },
+        {
+            "Feature": "Department_Research & Development",
+            "Importance": 0.08273960346076978
+        },
+        {
+            "Feature": "PerformanceRating",
+            "Importance": 0.08240944478480484
+        },
+        {
+            "Feature": "MaritalStatus_Married",
+            "Importance": 0.06151194810596413
+        },
+        {
+            "Feature": "JobRole_Manufacturing Director",
+            "Importance": 0.049615042416537296
+        },
+        {
+            "Feature": "EducationField_Technical Degree",
+            "Importance": -0.04642734367581616
+        },
+        {
+            "Feature": "MonthlyIncome",
+            "Importance": 0.036367378248409424
+        },
+        {
+            "Feature": "MonthlyRate",
+            "Importance": 0.015856377307138497
+        },
+        {
+            "Feature": "Education",
+            "Importance": 0.015265981563375048
+        },
+        {
+            "Feature": "HourlyRate",
+            "Importance": -0.007579467083756688
+        }
+    ]
+}
